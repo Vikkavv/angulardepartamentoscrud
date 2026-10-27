@@ -1,0 +1,15 @@
+<h1>Crear Departamento</h1>
+<form #crearDepartamentoForm="ngForm" (ngSubmit)="enviarDatos()">
+    <label for="idDepartamento">ID Departamento</label><br>
+    <input class="form-control" type="text" name="idDepartamento" id="idDepartamento" #idDepartamento required>
+    <br><br>
+
+    <label for="nombre">Nombre</label><br>
+    <input class="form-control" type="text" name="nombre" id="nombre" #nombre required>
+    <br><br>
+
+    <label for="localidad"></label>
+    <input class="form-control" type="text" name="localidad" id="localidad" #localidad required>
+
+    <button class="btn btn-outline-success" type="submit">Crear</button>
+</form>

@@ -1,0 +1,11 @@
+<h1>Departamentos</h1>
+<br>
+<div class="grid col4 gap1">
+    @for (departamento of departamentos; track $index) {
+        <div class="btnM">
+            <h2>{{departamento.numero}}</h2>
+            <p>{{departamento.nombre}}</p>
+            <p>{{departamento.localidad}} Años</p>
+        </div>
+    }
+</div>
