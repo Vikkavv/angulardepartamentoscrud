@@ -9,9 +9,19 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search-component/search-component';
 import { DepartamentosService } from './services/departamentos.service';
 import { CreateDepartamento } from './components/create-departamento/create-departamento';
+import { DetailsComponent } from './components/details-component/details-component';
+import { UpdateDepartamentoComponent } from './components/update-departamento-component/update-departamento-component';
 
 @NgModule({
-  declarations: [App, HomeComponent, MenuComponent, SearchComponent, CreateDepartamento],
+  declarations: [
+    App,
+    HomeComponent,
+    MenuComponent,
+    SearchComponent,
+    CreateDepartamento,
+    DetailsComponent,
+    UpdateDepartamentoComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(), DepartamentosService],
   bootstrap: [App],

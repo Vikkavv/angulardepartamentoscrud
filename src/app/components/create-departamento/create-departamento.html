@@ -1,15 +1,23 @@
-<h1>Crear Departamento</h1>
-<form #crearDepartamentoForm="ngForm" (ngSubmit)="enviarDatos()">
-    <label for="idDepartamento">ID Departamento</label><br>
-    <input class="form-control" type="text" name="idDepartamento" id="idDepartamento" #idDepartamento required>
-    <br><br>
+<div class="grid justify-content-center">
+    <h1>Crear Departamento</h1>
+    <h2>{{message}}</h2>
 
-    <label for="nombre">Nombre</label><br>
-    <input class="form-control" type="text" name="nombre" id="nombre" #nombre required>
-    <br><br>
+    <form class="w-fitContent grid gap1" #crearDepartamentoForm="ngForm" (ngSubmit)="enviarDatos()">
+        <div>
+        <label for="idDepartamento">ID Departamento</label><br>
+        <input class="form-control" type="text" name="idDepartamento" id="idDepartamento" #idDepartamento required>
+        </div>
 
-    <label for="localidad"></label>
-    <input class="form-control" type="text" name="localidad" id="localidad" #localidad required>
+        <div>
+            <label for="nombre">Nombre</label><br>
+            <input class="form-control" type="text" name="nombre" id="nombre" #nombre required>
+        </div>
 
-    <button class="btn btn-outline-success" type="submit">Crear</button>
-</form>
+        <div>
+            <label for="localidad">Localidad</label>
+            <input class="form-control" type="text" name="localidad" id="localidad" #localidad required>
+        </div>
+
+        <button class="btn btn-outline-success" type="submit">Crear</button>
+    </form>
+</div>

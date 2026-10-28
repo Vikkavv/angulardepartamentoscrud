@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit{
     for (const route of routes) {
       let inComponentName = (route.component?.name)?.toLocaleLowerCase().includes(this.searched);
       if((route.path?.includes(this.searched) || inComponentName ) && !(route.path?.includes(":"))) 
-        resultsLocal.push(new Result(normalizeCamelCase(route.component?.name ?? ""), route.path ?? ""));
+        resultsLocal.push(new Result(normalizeCamelCase(route.component?.name ?? ""), (route.path ?? "") === '' ? '/' : route.path ?? ""));
     }
     this.results = resultsLocal;
   }

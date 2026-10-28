@@ -1,11 +1,42 @@
-<h1>Departamentos</h1>
+<div class="flex justify-content-between">
+    <h1>Departamentos</h1>
+    <button class="btn btn-outline-danger" (click)="crearDepartamentosDefault()" >Crear departamentos default</button>
+</div>
 <br>
 <div class="grid col4 gap1">
+    @if(departamentosDefault.length > 1){
+        @for (departamento of departamentosDefault; track $index) {
+            <div class="btnM">
+                <h2>#{{departamento.numero}}</h2>
+                <p>{{departamento.nombre}}</p>
+                <p>📍 {{departamento.localidad}}</p>
+                <div class="flex gap1">
+                    <a class="btn btn-outline-success" [routerLink]="['/deptdetails', departamento.numero, departamento.nombre, departamento.localidad]">View</a>
+                    <a class="btn btn-outline-warning" [routerLink]="['/updatedepartamento', departamento.numero]">Edit</a>
+                    <button class="btn btn-outline-danger" (click)="deleteDepartamento(departamento.numero)" >Delete</button>
+                </div>     
+            </div>
+        }
+    }
+    @else {
+        <h1>No hay departamentos default</h1>
+    }
+
+</div>
+<br><br>
+<div class="grid col4 gap1">
     @for (departamento of departamentos; track $index) {
-        <div class="btnM">
-            <h2>{{departamento.numero}}</h2>
-            <p>{{departamento.nombre}}</p>
-            <p>{{departamento.localidad}} Años</p>
-        </div>
+        @if(!defaultNumbers.includes(departamento.numero)){
+            <div class="btnM">
+                <h2>#{{departamento.numero}}</h2>
+                <p>{{departamento.nombre}}</p>
+                <p>📍 {{departamento.localidad}}</p>
+                <div class="flex gap1">
+                    <a class="btn btn-outline-success" [routerLink]="['/deptdetails', departamento.numero, departamento.nombre, departamento.localidad]">View</a>
+                    <a class="btn btn-outline-warning" [routerLink]="['/updatedepartamento', departamento.numero]">Edit</a>
+                    <button class="btn btn-outline-danger" (click)="deleteDepartamento(departamento.numero)" >Delete</button>
+                </div>            
+            </div>
+        }
     }
 </div>

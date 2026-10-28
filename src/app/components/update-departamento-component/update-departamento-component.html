@@ -1,0 +1,19 @@
+<h1>Departamento #{{numeroDept}}</h1>
+<form class="w-fitContent grid gap1" #crearDepartamentoForm="ngForm" (ngSubmit)="updateDepartamento()">
+    <div>
+    <label for="idDepartamento">ID Departamento</label><br>
+    <input class="form-control" disabled value="{{departamento?.numero}}" type="text" name="idDepartamento" id="idDepartamento" #numero required>
+    </div>
+
+    <div>
+        <label for="nombre">Nombre</label><br>
+        <input class="form-control" value="{{departamento?.nombre}}" type="text" name="nombre" id="nombre" #nombre required>
+    </div>
+
+    <div>
+        <label for="localidad">Localidad</label>
+        <input class="form-control" value="{{departamento?.localidad}}" type="text" name="localidad" id="localidad" #localidad required>
+    </div>
+
+    <button class="btn btn-outline-success" type="submit">Editar</button>
+</form>

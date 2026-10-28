@@ -1,0 +1,8 @@
+<h1>Departamento #{{numero}}</h1>
+<h2>{{nombre}}</h2>
+<h2>📍 {{localidad}}</h2>
+<br>
+<div class="flex gap1">
+    <a class="btn btn-outline-warning" [routerLink]="['/updatedepartamento', numero]">Edit</a>
+    <a class="btn btn-outline-info" [routerLink]="['/']">Volver</a>
+</div>
